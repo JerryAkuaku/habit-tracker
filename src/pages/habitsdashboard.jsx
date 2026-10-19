@@ -1,10 +1,7 @@
-//import initialHabits from "../data/initialHabits";
 import Habit from "../components/habit";
 import { useState } from "react";
-function HabitsDashboard({ habits, setHabits, clearDone }) {
-  // const [habits, setHabits] = useState(initialHabits);
+function HabitsDashboard({ habits, setHabits, clearDone, handleDelete }) {
   const [newHabit, setNewHabit] = useState("");
-  // const doneHabits = habits.filter((item) => item.isDone == true);
 
   function toggleDone(id) {
     setHabits(
@@ -16,10 +13,6 @@ function HabitsDashboard({ habits, setHabits, clearDone }) {
         }
       }),
     );
-  }
-
-  function handleDelete(id) {
-    setHabits(habits.filter((item) => item.id !== id));
   }
 
   function handleAdd() {
@@ -52,7 +45,6 @@ function HabitsDashboard({ habits, setHabits, clearDone }) {
           </li>
         ))}
       </ul>
-      {/*<p>{initialHabits[0].content}</p>*/}
     </>
   );
 }
